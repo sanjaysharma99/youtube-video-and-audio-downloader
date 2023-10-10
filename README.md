@@ -1,4 +1,3 @@
-#YouTube Video and Audio Downloader
 YouTube Video and Audio Downloader is a powerful and user-friendly Django web application that allows you to easily download both video and audio content from YouTube. With a sleek and intuitive user interface, it provides a hassle-free experience for users to convert YouTube videos into downloadable files.
 
 Features:
