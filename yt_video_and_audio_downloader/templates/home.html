@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>YouTube Video and Audio Downloader</title>
+        <link href="{% static 'css/home.css' %}" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <form action="/convert/" method="post">
+                {% csrf_token %}
+                <input id="url_field" type="text" name="video_url" placeholder="Paste YouTube Video Link" required>
+                <input id="sb" type="submit" value="Download">
+            </form>
+        </div>
+    </body>
+</html>

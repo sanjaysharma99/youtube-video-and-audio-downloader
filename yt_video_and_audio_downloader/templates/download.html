@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Download Video and Audio</title>
+        <link href="{% static 'css/download.css' %}" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <table>
+                <tr>
+                    <th>File Type</th>
+                    <th>Download</th>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'images/video_icon.png' %}" alt="video file"></td>
+                    <td>
+                        <form action="/download/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name="file_path" value="{{ video_file }}" hidden>
+                            <input class="sb" type="submit" value="Download Mp4">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="{% static 'images/audio_icon.png' %}" alt="audio file">
+                    </td>
+                    <td>
+                        <form action="/download/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name="file_path" value="{{ audio_file }}" hidden>
+                            <input class="sb" type="submit" value="Download Mp3">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
